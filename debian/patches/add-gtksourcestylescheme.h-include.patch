@@ -1,0 +1,21 @@
+Last-Update: 2014-03-02
+Forwarded: no
+From: Peter Michael Green <plugwash@raspbian.org>
+Reviewed-By: Dmitry Smirnov <onlyjob@member.fsf.org>
+Bug-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=740448
+Description: fix FTBFS.
+ gitg-commit-view.c:1663:2: error: implicit declaration of function 'gtk_source_style_scheme_get_style' [-Werror=implicit-function-declaration]
+   style = gtk_source_style_scheme_get_style (scheme, "current-line");
+
+--- a/gitg/gitg-commit-view.c
++++ b/gitg/gitg-commit-view.c
+@@ -24,8 +24,9 @@
+ #include <gtksourceview/gtksourcebuffer.h>
+ #include <gtksourceview/gtksourcelanguagemanager.h>
+ #include <gtksourceview/gtksourcemarkattributes.h>
+ #include <gtksourceview/gtksourcestyleschememanager.h>
++#include <gtksourceview/gtksourcestylescheme.h>
+ #include <gtksourceview/gtksourcegutter.h>
+ #include <gtksourceview/gtksourcegutterrendererpixbuf.h>
+ #include <glib/gi18n.h>
+ #include <string.h>

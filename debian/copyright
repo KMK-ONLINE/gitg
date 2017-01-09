@@ -1,0 +1,57 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: gitg
+Source: http://ftp.gnome.org/pub/GNOME/sources/gitg/
+Comment:
+ This package was debianized by Jonny Lamb <jonny@debian.org>
+ on Sat, 14 Feb 2009 16:44:16 +0000.
+ .
+ Upstream Vcs-Git: http://git.gnome.org/browse/gitg/
+
+Files: *
+Copyright: 2009-2010 Jesse van den Kieboom
+License: GPL-2+
+
+Files: libgitg/gitg-encodings.*
+Copyright: 2002-2005 Paolo Maggi
+           2002      Red Hat, Inc.
+License: GPL-2+
+
+Files: libgitg/gitg-smart-charset-converter.*
+Copyright: 2009 Ignacio Casal Quinteiro
+License: GPL-2+
+
+Files: libgitg/gitg-i18n.*
+Copyright: 1997-2000 Free Software Foundation
+License: LGPL-2.1+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+ .
+ The complete text of the Lesser GNU General Public License
+ can be found in the file "/usr/share/common-licenses/LGPL-2.1".
+
+Files: debian/*
+Copyright: 2009-2011 Jonny Lamb <jonny@debian.org>
+           2012-2013 Dmitry Smirnov <onlyjob@debian.org>
+License: GPL-2+
+
+License: GPL-2+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ The complete text of the GNU General Public License version 2
+ can be found in `/usr/share/common-licenses/GPL-2'.
+

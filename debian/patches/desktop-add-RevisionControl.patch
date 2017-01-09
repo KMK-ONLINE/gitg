@@ -1,0 +1,17 @@
+Last-Update: 2012-09-28
+Reviewed-By: Dmitry Smirnov <onlyjob@member.fsf.org>
+From: Jonny Lamb <jonny@debian.org>
+Forwarded: no
+Description: add "RevisionControl" to desktop file Categories
+
+--- a/data/gitg.desktop.in.in
++++ b/data/gitg.desktop.in.in
+@@ -6,7 +6,7 @@
+ Terminal=false
+ Type=Application
+ Icon=gitg
+-Categories=GNOME;GTK;Development;
++Categories=GNOME;GTK;Development;RevisionControl;
+ #X-GNOME-DocPath=gitg/gitg.xml
+ X-GNOME-Bugzilla-Bugzilla=GNOME
+ X-GNOME-Bugzilla-Product=gitg

@@ -1,0 +1,44 @@
+#!/usr/bin/make -f
+
+DEB_HOST_GNU_TYPE   ?= $(shell dpkg-architecture -qDEB_HOST_GNU_TYPE)
+DEB_BUILD_GNU_TYPE  ?= $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE)
+
+export DEB_BUILD_MAINT_OPTIONS=hardening=+all
+
+# minimise needless linking
+export DEB_LDFLAGS_MAINT_APPEND= -Wl,--as-needed
+
+%:
+	dh $@ --with autoreconf
+
+# use --as-needed only if supported by dh-autoreconf (to simplify backporting)
+DH_AS_NEEDED=$(shell dpkg --compare-versions $$(dpkg --status dh-autoreconf | grep Version | cut -d' ' -f2) ge 6 && echo --as-needed)
+override_dh_autoreconf:
+	dh_autoreconf $(DH_AS_NEEDED)
+	intltoolize --copy --force \
+        && aclocal
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+            --prefix=/usr \
+            --libdir=/usr/lib/gitg \
+            --sysconfdir=/usr/share \
+            --build=$(DEB_BUILD_GNU_TYPE) \
+            --disable-silent-rules
+
+override_dh_auto_install:
+	dh_auto_install --destdir=$(CURDIR)/debian/tmp
+
+override_dh_auto_test:
+	## continue on failed test(s)
+	-dh_auto_test
+
+override_dh_installchangelogs:
+	dh_installchangelogs NEWS
+
+override_dh_makeshlibs:
+	dh_makeshlibs --noscripts
+
+override_dh_builddeb:
+	dh_builddeb -- -Zxz
+

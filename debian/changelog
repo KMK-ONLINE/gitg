@@ -1,0 +1,215 @@
+gitg (0.2.7-2) unstable; urgency=low
+
+  * Standards to 3.9.5
+  * Dropped "libdconf0" from Depends (Closes: #711024).
+  * New patch to fix FTBFS (Closes: #740448)
+    Thanks, Peter Michael Green.
+  * Set myself as Maintainer as requested by Jonny Lamb.
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Sun, 02 Mar 2014 11:24:55 +1100
+
+gitg (0.2.7-1) unstable; urgency=low
+
+  * Upload to unstable.
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Wed, 08 May 2013 12:42:26 +1000
+
+gitg (0.2.7-1~exp0) experimental; urgency=low
+
+  * New upstream bugfix release [April 2013].
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Sun, 07 Apr 2013 10:32:03 +1000
+
+gitg (0.2.6-1~exp0) experimental; urgency=low
+
+  * New upstream release [March 2013].
+  * Removed unnecessary versioned Build-Deps.
+  * Updated my email address and copyright years.
+
+ -- Dmitry Smirnov <onlyjob@debian.org>  Sun, 31 Mar 2013 13:17:54 +1100
+
+gitg (0.2.5-1~exp0) experimental; urgency=low
+
+  * New upstream release [2011-09-01].
+  * debian/copyright to copyright-format-1.0 & audit.
+  * debian/watch to look for .xz archives.
+  * source and .deb files compression to xz.
+  * standards to 3.9.4
+  * debhelper & compat to version 9.
+  * build with all hardening.
+  * build with --as-needed to minimise needless linking.
+  * run post-build tests but continue on failed ones.
+  * install upstream changelog.
+  * (Build-)Depends re-formatted and alphabetized.
+  * added myself to Uploaders.
+  * "autotools-dev" is replaced with "dh-autoreconf" & "intltoolize".
+  * install private library instead of linking it statically,
+    dropped patch to link statically.
+  * dropped obsolete patch [ftbfs].
+  * dropped debian/update-patches.mk (not used any more).
+  * dropped debian/README.source since it is mostly provides
+    instructions how to use git-buildpackage.
+  * dropped debian/gbp.conf (new repository is much simpler).
+  * desktop file patch is refreshed.
+  * new Homepage (Closes: #688116).
+  * removed GTK/GNOME from package description (Closes: #672454).
+  * new repository at collab-maint (Closes: #672453).
+
+ -- Dmitry Smirnov <onlyjob@member.fsf.org>  Sun, 30 Sep 2012 12:42:42 +1000
+
+gitg (0.2.4-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Replaced deprecated gdk_window_get_pointer API. (Closes: #666232)
+    + debian/patches/ftbfs: Added.
+
+ -- wujiang <masterwujiang@gmail.com>  Sun, 29 Apr 2012 13:57:01 +0800
+
+gitg (0.2.4-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/watch: Look for tar.bz2 files instead.
+  * debian/control: Up build-dep version on gtksourceview.
+
+ -- Jonny Lamb <jonny@debian.org>  Wed, 24 Aug 2011 15:52:46 +0100
+
+gitg (0.2.2-1) unstable; urgency=low
+
+  * New upstream release. (Closes: #623732)
+  * debian/control: Add missing dependencies. Thanks to Lubomír Sedlář for
+    the hints. (Closes: #618894)
+  * debian/patches/: Refresh both patches.
+  * debian/control: Update build-dep versions for new release.
+
+ -- Jonny Lamb <jonny@debian.org>  Wed, 24 Aug 2011 14:24:29 +0100
+
+gitg (0.1.0-1) unstable; urgency=low
+
+  * New upstream release. (Closes: #617674)
+  * debian/rules: Call configure, not autogen.sh.
+  * debian/watch: Fix watch file. (Closes: #612161)
+  * debian/control:
+    + Depend on dbus-x11. (Closes: #612449)
+    + Change git-core dependency to just git.
+    + Updated build-deps for new version.
+    + Upped Standards-Version. (no changes)
+  * debian/copyright: Updated.
+  * debian/patches/:
+    + Updated for new release.
+    + 0002-Allow-creating-a-tag-without-a-message.patch: Removed as
+      applied upstream.
+    + 0002-libgitg-make-a-static-library.patch: Added to make libgitg a
+      static library instead of shipping it shared.
+  * debian/gitg.install: Added.
+
+ -- Jonny Lamb <jonny@debian.org>  Fri, 18 Mar 2011 22:38:26 +0000
+
+gitg (0.0.6-3) unstable; urgency=low
+
+  * debian/control: Upped Standards-Version. (no changes)
+  * Change source format to 3.0 (quilt).
+  * debian/rules: Cleaned up a bit.
+
+ -- Jonny Lamb <jonny@debian.org>  Thu, 13 May 2010 09:33:24 +0100
+
+gitg (0.0.6-2) unstable; urgency=low
+
+  * debian/patches/:
+    + 0002-Allow-creating-a-tag-without-a-message.patch: Added. This patch
+      has also gone into upstream's git. (Closes: #611434)
+
+ -- Jonny Lamb <jonny@debian.org>  Mon, 01 Mar 2010 10:17:39 +0000
+
+gitg (0.0.6-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/patches/: Refreshed patch.
+  * debian/copyright: Removed copyright for libsexy widgets which have
+    been removed this release.
+  * debian/control: Add versions to some build-deps.
+  * debian/rules: Disabled building with silent rules for more interesting
+    build logs!
+
+ -- Jonny Lamb <jonny@debian.org>  Sun, 21 Feb 2010 16:37:23 +0000
+
+gitg (0.0.5-1) unstable; urgency=low
+
+  * New upstream release. (Closes: #547384)
+  * debian/patches/: Refreshed patch.
+
+ -- Jonny Lamb <jonny@debian.org>  Sat, 19 Sep 2009 12:33:12 +0100
+
+gitg (0.0.4-1) unstable; urgency=low
+
+  * New upsream release. (Closes: #536580)
+
+ -- Jonny Lamb <jonny@debian.org>  Sun, 12 Jul 2009 19:43:04 +0100
+
+gitg (0.0.3-2) unstable; urgency=low
+
+  * debian/control: Add Depends on git-core. (Closes: #535047)
+
+ -- Jonny Lamb <jonny@debian.org>  Mon, 29 Jun 2009 10:21:32 +0100
+
+gitg (0.0.3-1) unstable; urgency=low
+
+  * New upstream release. (Closes: #525520)
+  * debian/watch: Updated.
+  * debian/patches/:
+    + 0002-Initial-patch-to-show-tags-referenced-from-tag-objec.patch: Removed;
+      fixed upstream.
+  * debian/rules: Removed get-orig-source target.
+
+ -- Jonny Lamb <jonny@debian.org>  Sat, 25 Apr 2009 10:16:58 +0100
+
+gitg (0.0.2-1) unstable; urgency=low
+
+  * New upstream release. (Closes: #522919)
+    + Timestamp to date string conversion is now valid UTF-8. (Closes: #518705)
+    + Fixes to async task cancellation. (Closes: #520922)
+  * debian/control: Changed Section to vcs.
+  * debian/patches/:
+    + 0001-Change-Categories-to-Development-RevisionControl.patch: Added
+      to change Categories to Development;RevisionControl. (Closes: 520887)
+    + 0001-Terminate-gtk_text_buffer_create_tag-s-arguments-wit.patch: Removed
+      as applied upstream.
+    + 0002-Initial-patch-to-show-tags-referenced-from-tag-objec.patch: Added
+      to show tags referenced from tag objects. (Closes: #521062)
+  * debian/watch: Added.
+
+ -- Jonny Lamb <jonny@debian.org>  Thu, 09 Apr 2009 00:44:07 +0100
+
+gitg (0.0.1+20090307.git.99b20ff-2) unstable; urgency=low
+
+  * debian/control:
+    + Updated Homepage. (Closes: #519262)
+    + Add quilt Build-Dep.
+    + Upped Standards-Version. (no changes)
+  * debian/update-patches.mk: Added.
+  * debian/rules:
+    + Include update-patches.mk.
+    + Include quilt.make.
+    + Added patch and unpatch rule calls.
+  * debian/patches/:
+    + 0001-Terminate-gtk_text_buffer_create_tag-s-arguments-wit.patch: Added
+      to fix call to gtk_text_buffer_create_tag and stop GObject warnings.
+      (Closes: #520826)
+
+ -- Jonny Lamb <jonny@debian.org>  Mon, 23 Mar 2009 02:46:13 +0000
+
+gitg (0.0.1+20090307.git.99b20ff-1) unstable; urgency=low
+
+  * New upstream snapshot.
+  * debian/copyright:
+    + Added copyright information for gitg/sexy-icon-entry.*.
+    + Made License fields more unform.
+  * debian/README.source: Added.
+  * debian/control: Upped Standards-Version.
+
+ -- Jonny Lamb <jonny@debian.org>  Sat, 07 Mar 2009 17:56:12 +0000
+
+gitg (0.0.1+20090221.git.f0710a6-1) unstable; urgency=low
+
+  * Initial release. (Closes: #515154)
+
+ -- Jonny Lamb <jonny@debian.org>  Sat, 21 Feb 2009 15:07:13 +0000
